@@ -1,4 +1,4 @@
-# @xanhz/nestjs-rabbit
+# @xanhz/nestjs-rabbitmq
 
 RabbitMQ ClientProxy & Server for NestJS Microservice
 
@@ -6,10 +6,10 @@ RabbitMQ ClientProxy & Server for NestJS Microservice
 
 ```bash
 # For npm
-npm install @xanhz/nestjs-rabbit
+npm install @xanhz/nestjs-rabbitmq
 
 # For yarn
-yarn install @xanhz/nestjs-rabbit
+yarn install @xanhz/nestjs-rabbitmq
 ```
 
 # **2. Usage**
@@ -22,7 +22,7 @@ yarn install @xanhz/nestjs-rabbit
 // main.ts
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions } from '@nestjs/microservices';
-import { RabbitServer } from '@xanhz/nestjs-rabbit';
+import { RabbitServer } from '@xanhz/nestjs-rabbitmq';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -61,7 +61,7 @@ bootstrap();
 // main.ts
 import { NestFactory } from '@nestjs/core';
 import { MicroserviceOptions } from '@nestjs/microservices';
-import { RabbitServer } from '@xanhz/nestjs-rabbit';
+import { RabbitServer } from '@xanhz/nestjs-rabbitmq';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -98,7 +98,7 @@ bootstrap();
 // app.controller.ts
 import { Body, Controller, Inject, Logger, Post } from '@nestjs/common';
 import { Ctx, Payload } from '@nestjs/microservices';
-import { PublishOptions, RabbitClient, RabbitContext, RabbitRPC, RabbitSubscribe } from '@xanhz/nestjs-rabbit';
+import { PublishOptions, RabbitClient, RabbitContext, RabbitRPC, RabbitSubscribe } from '@xanhz/nestjs-rabbitmq';
 
 @Controller()
 export class AppController {
@@ -132,7 +132,7 @@ export class AppController {
 // app.module.ts
 import { Module } from '@nestjs/common';
 import { ClientsModule } from '@nestjs/microservices';
-import { RabbitClient, RabbitClientOptions } from '@xanhz/nestjs-rabbit';
+import { RabbitClient, RabbitClientOptions } from '@xanhz/nestjs-rabbitmq';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
@@ -171,7 +171,7 @@ export class AppModule {}
 ```ts
 // app.service.ts
 import { Inject, Injectable } from '@nestjs/common';
-import { PublishOptions, RabbitClient } from '@xanhz/nestjs-rabbit';
+import { PublishOptions, RabbitClient } from '@xanhz/nestjs-rabbitmq';
 
 @Injectable()
 export class AppService {
