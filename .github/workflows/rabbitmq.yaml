@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - packages/rabbitmq/**
+      - packages/rabbitmq/src/**
 
 jobs:
   publish:
